@@ -24,6 +24,29 @@ body {
   padding: 0 1rem 0 1rem;
 }
 
+.header ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+}
+
+.header ul a:link:active,
+.header ul a:link:visited,
+.header ul a:link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  color: #fff;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.header ul a:hover {
+  transform: translateY(-0.5rem);
+}
+
 .main {
   flex: 1;
   display: grid;

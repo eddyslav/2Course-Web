@@ -31,9 +31,13 @@ const getValueFromInputs = (inputs) =>
     {}
   );
 
-const validateInputs = (inputs) => {
+const validateInputs = (inputs, indexToSkip) => {
   // if place is took, no new element there
-  if (settings.find(({ place }) => place === inputs.place))
+  if (
+    settings
+      .filter((_, i) => i !== indexToSkip)
+      .find(({ place }) => place === inputs.place)
+  )
     return alert("There is already setting for that place!");
 
   return true;
@@ -48,7 +52,8 @@ const rerenderList = () => {
     .map(
       (setting) =>
         `<li data-place="${setting.place}" data-content="${setting.content}">Place: ${setting.place}<br>Content: ${setting.content}</li>`
-    )}</ul>`;
+    )
+    .join("")}</ul>`;
 
   displayList.querySelector("ul").addEventListener("click", (listE) => {
     if (listE.target.localName !== "li") return;
@@ -90,7 +95,7 @@ const rerenderList = () => {
             elE.target.querySelectorAll("input[name='data']")
           );
 
-          if (type === "edit" && validateInputs(value)) {
+          if (type === "edit" && validateInputs(value, index)) {
             settings[index] = {
               ...settings[index],
               ...value,
@@ -151,7 +156,7 @@ form.addEventListener("submit", (e) => {
     e.target.querySelectorAll("input[name='data']")
   );
 
-  if (!validateInputs(value)) return;
+  if (!validateInputs(value, -1)) return;
 
   settings.push(value);
 
