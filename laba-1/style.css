@@ -31,19 +31,18 @@ body {
   list-style: none;
 }
 
-.header ul a:link:active,
-.header ul a:link:visited,
-.header ul a:link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
   text-decoration: underline;
   color: #fff;
   transition: 0.3s all;
   cursor: pointer;
 }
 
-.header ul a:hover {
+a:hover,
+a:active {
   transform: translateY(-0.5rem);
 }
 
