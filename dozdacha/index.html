@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon</title>
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+
+            background-color: #000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shape-container {
+            width: 30rem;
+            height: 30rem;
+        }
+
+        .shape-1 {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 100%;
+            background-color: yellow;
+            position: relative;
+        }
+
+        .shape-2 {
+            background-color: #000;
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+            position: absolute;
+            left: -2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shape-container">
+        <div class="shape-1">
+            <div class="shape-2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
